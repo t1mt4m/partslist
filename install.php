@@ -2,10 +2,10 @@
 include_once("connection.php");
 #create tables
 $stmt=$conn->prepare("DROP TABLE IF EXISTS cars;
-CREATE TABLE `cars` (
+CREATE TABLE `car` (
   `cars` varchar(128) NOT NULL
 );
-CREATE TABLE `parts` (
+CREATE TABLE `part` (
   `partID` int(4) NOT NULL,
   `partName` varchar(128) NOT NULL,
   `price` float NOT NULL,
@@ -23,13 +23,13 @@ CREATE TABLE `projecthasparts` (
   `works` tinyint(1) NOT NULL,
   `notes` varchar(256) NOT NULL
 );
-CREATE TABLE `projects` (
+CREATE TABLE `project` (
   `projectID` int(4) NOT NULL,
   `userID` int(8) NOT NULL,
   `projectName` varchar(32) NOT NULL,
   `projectHost` varchar(32) NOT NULL
 );
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `userID` int(8) NOT NULL,
   `username` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL
