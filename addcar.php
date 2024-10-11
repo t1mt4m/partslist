@@ -5,7 +5,7 @@ array_map("htmlspecialchars", $_POST);
 
     try{
     $stmt = $conn->prepare("
-    INSERT INTO cars (carMk)
+    INSERT INTO cars (carMake, carModel, carYear)
     VALUES (:carMake, :carModel, :carYear)");
     $stmt->bindParam(':carModel', $_POST['carModel']);
     $stmt->bindParam(':carYear', $_POST['carYear']);

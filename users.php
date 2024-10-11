@@ -2,7 +2,7 @@
 <html>
 <head>
     
-    <title>Page title</title>
+    <title>ADD YOUR USER</title>
     
 </head>
 <body>
@@ -13,9 +13,17 @@
 
     <br>
     <!--Next 3 lines create radio buttons to select user role-->
-    <input type="radio" name="role" value="user" checked> Pupil<br>
+    <input type="radio" name="role" value="user" checked> User<br>
     <input type="radio" name="role" value="admin"> Admin<br>
     <input type="submit" value="Add User">
     </form>
+    <?php 
+    include_once('connection.php');
+    $stmt = $conn->prepare("SELECT * FROM users");
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+    {
+    echo($row["username"].' '.$row["role"]."<br>");
+    }
 </body>
 </html>
