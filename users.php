@@ -25,5 +25,7 @@
     {
     echo($row["username"].' '.$row["role"]."<br>");
     }
+    ?>
+
 </body>
 </html>
