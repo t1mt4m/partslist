@@ -31,7 +31,7 @@ if (!isset($_SESSION['name']))
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     {
-    echo($row["username"].' '.$row["role"]."<br>");
+    echo($row["username"].' '.$row["role"].' '.$row["password"]."<br>");
     }
     ?>
 

@@ -1,10 +1,4 @@
 <?php
-session_start(); 
-if (!isset($_SESSION['name']))
-{   
-    header("Location:login.php");
-}
-
 include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
 switch($_POST["role"]){
@@ -36,3 +30,5 @@ else{
         }
     echo("submitted");
 }?>
+<html>
+    <form action="<?php header('Location: users.php'); ?>" method="post>
