@@ -1,6 +1,8 @@
 <?php
-include_once("connection.php");
-#create tables
+include_once("connection.php"); //connect to database
+
+// create tables
+
 $stmt=$conn->prepare("DROP TABLE IF EXISTS cars;
 CREATE TABLE `cars` (
   `carID` int(4) NOT NULL,
@@ -50,4 +52,18 @@ CREATE TABLE `users` (
 );
 ")
 $stmt->execute();
+
+// insert data into database tables, tables purely for reference first then actual per user data after
+
+$stmt->$conn->prepare("
+INSERT INTO `parttype` (`partTypeNo`, `partType`) VALUES
+(1, 'Engine'),
+(2, 'Transmission'),
+(3, 'Brakes'),
+(4, 'Suspension'),
+(5, 'Electrical'),
+(6, 'Interior');")
+$stmt->execute();
+
+$conn=null; //close connection
 ?>

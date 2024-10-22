@@ -27,7 +27,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "no";
     }
 }
-echo "even worse";
-//header('Location: parts.php');
+echo "  even worse";
 $conn = null;
 ?>
