@@ -11,7 +11,7 @@ switch($_POST["role"]){
 }
 $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 if($_POST["password"]!=$_POST["confirmpassword"]){
-    echo " but Error: Passwords do not match";
+    echo "Error: Passwords do not match";
 }
 else{
     try{
