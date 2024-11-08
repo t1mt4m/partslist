@@ -33,11 +33,9 @@ CREATE TABLE projecthasparts (
   fitted tinyint(1) NOT NULL,
   inShop tinyint(1) NOT NULL,
   works tinyint(1) NOT NULL,
-  notes varchar(256) NOT NULL
-  PRIMARY KEY (projectID, partID),
+  notes varchar(256) NOT NULL,
+  PRIMARY KEY (projectID, partID)
 );");
-              //FOREIGN KEY (projectID) REFERENCES project(projectID),
-              //FOREIGN KEY (partID) REFERENCES parts(partID)
 $stmt=$conn->prepare("DROP TABLE IF EXISTS project;
 CREATE TABLE project (
   projectID int(4) AUTO_INCREMENT PRIMARY KEY,
@@ -46,19 +44,18 @@ CREATE TABLE project (
   carID int(4) NOT NULL
 );");
 $stmt->execute();
-$stmt=$conn->prepare("DROP TABLE IF EXISTS users
+$stmt=$conn->prepare("DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   userID int(8) AUTO_INCREMENT PRIMARY KEY,
   username varchar(32) NOT NULL,
   password varchar(256) NOT NULL,
   role tinyint(4) NOT NULL
-);
-");
+);");
 $stmt->execute();
 
 // insert data into database tables, tables purely for reference first then actual per user data after
 
-$stmt->$conn->prepare("
+$stmt=$conn->prepare("
 INSERT INTO parttype (partTypeNo, partType) VALUES
 (1, 'Engine'),
 (2, 'Transmission'),
