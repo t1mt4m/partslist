@@ -7,7 +7,7 @@ $stmt=$conn->prepare("DROP TABLE IF EXISTS cars;
 CREATE TABLE cars (
   carID int(4) AUTO_INCREMENT PRIMARY KEY,
   carMake varchar(64) NOT NULL,
-  carModel int(64) NOT NULL,
+  carModel varchar(64) NOT NULL,
   carYear int(4) NOT NULL,
   carPrice int(32) NOT NULL
 );");
