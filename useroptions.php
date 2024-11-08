@@ -8,7 +8,7 @@
 <form action="showoptions.php"  method = "post">
 
   <!--Creates a drop down list-->
-  user:<select username="Userame">
+  user:<select username="Username">
   <?php
 	include_once('connection.php');
 	$stmt = $conn->prepare("SELECT * FROM users WHERE role=0 ORDER BY username ASC");

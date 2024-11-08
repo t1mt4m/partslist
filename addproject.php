@@ -1,0 +1,21 @@
+<?php
+session_start(); 
+include_once("connection.php");
+array_map("htmlspecialchars", $_POST);
+print_r($_POST);
+echo($_SESSION['username']." ".$_SESSION['userID']);
+try{
+    $stmt = $conn->prepare("
+    INSERT INTO projects (projectID, projectName, carID, userID)
+    VALUES (NULL, :projectName, :userID, :carID)");
+    $stmt->bindParam(':projectName', $_POST['projectName']);
+    $stmt->bindParam(':carID', $_POST['carID']);
+    $stmt->bindParam(':userID', $_POST['userID']);//$_SESSION['userID']);
+    $stmt->execute();
+    $conn=null;
+}
+catch(PDOException $e){
+        echo "error".$e->getMessage();
+    }
+echo("submitted");
+?>
