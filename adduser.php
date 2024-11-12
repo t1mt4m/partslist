@@ -5,7 +5,7 @@ switch($_POST["role"]){
 	case "user":
 		$role=0;
 		break;
-	case "Admin":
+	case "admin":
 		$role=1;
 		break;
 }
