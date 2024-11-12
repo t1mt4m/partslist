@@ -10,7 +10,7 @@ CREATE TABLE `cars` (
   `carModel` int(64) NOT NULL,
   `carYear` int(4) NOT NULL,
   `carPrice` int(32) NOT NULL
-);")
+);");
 $stmt->execute();
 $stmt=$conn->prepare("DROP TABLE IF EXISTS parts;
 CREATE TABLE `parts` (
