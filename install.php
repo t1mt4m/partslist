@@ -36,8 +36,8 @@ CREATE TABLE projecthasparts (
   notes varchar(256) NOT NULL,
   PRIMARY KEY (projectID, partID)
 );");
-$stmt=$conn->prepare("DROP TABLE IF EXISTS project;
-CREATE TABLE project (
+$stmt=$conn->prepare("DROP TABLE IF EXISTS projects;
+CREATE TABLE projects (
   projectID int(4) AUTO_INCREMENT PRIMARY KEY,
   userID int(8) NOT NULL,
   projectName varchar(32) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE users (
 );");
 $stmt->execute();
 
-// insert data into database tables, tables purely for reference first then actual per user data after
+// insert data into database tables, table references first then actual per user data after
 
 $stmt=$conn->prepare("
 INSERT INTO parttype (partTypeNo, partType) VALUES
@@ -63,6 +63,21 @@ INSERT INTO parttype (partTypeNo, partType) VALUES
 (4, 'Suspension'),
 (5, 'Electrical'),
 (6, 'Interior');");
+$stmt->execute();
+
+$hashed_password = password_hash("password", PASSWORD_DEFAULT);
+$stmt=$conn->prepare("
+INSERT INTO users (`username`, `password`, `role`) VALUES 
+('humblenoob76', :pw, '0'), 
+('urmom', :pw, '0');");
+$stmt->bindParam(':pw', $hashed_password);
+$stmt->execute();
+
+$stmt=$conn->prepare("
+INSERT INTO cars (carMake, carModel, carYear, carPrice) VALUES
+('Toyota', 'Corolla', 2021, 35000),
+('Honda', 'Civic', 2005, 10000),
+('Mazda', 'Miata', 1999, 3500);");
 $stmt->execute();
 
 $conn=null; //close connection

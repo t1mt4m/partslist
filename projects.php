@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start(); //start session
-//if (!isset($_SESSION['username'])) 
-//{   
-//    $_SESSION['backURL'] = $_SERVER['REQUEST_URL'];
-//    header("Location:login.php");
-//}
+if (!isset($_SESSION['username'])) 
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URL'];
+    header("Location:login.php");
+}
 ?>
 <html>
 <head>
@@ -23,7 +23,7 @@ session_start(); //start session
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
-                echo('<option value = '. $row["carID"].'> '. $row["carID"]." ".$row["carModel"]." ".$row["carMake"]."</option>");
+                echo('<option value = '. $row["carID"].'> '.$row["carMake"]." ".$row["carModel"]." ".$row["carYear"]."</option>");
             }
         ?>
         </select><br>
