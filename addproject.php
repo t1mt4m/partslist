@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 session_start(); 
 include_once("connection.php");
@@ -19,3 +20,12 @@ catch(PDOException $e){
     }
 echo("submitted");
 ?>
+<html>
+    <head>
+        <title>added</title>
+    </head>
+    <body>
+        <h1>added successfully</h1>
+        <p><a href="index.php">back</a>.</p>
+    </body>
+</html>

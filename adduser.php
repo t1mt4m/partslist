@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
@@ -31,4 +32,11 @@ else{
     echo("submitted");
 }?>
 <html>
-    <form action="<?php header('Location: users.php'); ?>" method="post>
+    <head>
+        <title>added</title>
+    </head>
+    <body>
+        <h1>added successfully</h1>
+        <p><a href="index.php">back</a>.</p>
+    </body>
+</html>

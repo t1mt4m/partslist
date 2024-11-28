@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
@@ -20,3 +21,12 @@ array_map("htmlspecialchars", $_POST);
     }
 echo("submitted");
 ?>
+<html>
+    <head>
+        <title>part added</title>
+    </head>
+    <body>
+        <h1>part added successfully</h1>
+        <p><a href="index.php">back</a>.</p>
+    </body>
+</html>

@@ -22,11 +22,11 @@ echo("submitted");
 ?>
 <html>
     <head>
-        <title>Car Added</title>
+        <title>car added</title>
     </head>
     <body>
-        <h1>Car Added Successfully</h1>
-        <p>Return to <a href="index.php">Car List</a>.</p>
+        <h1>car added successfully</h1>
+        <p><a href="index.php">back</a>.</p>
     </body>
 </html>
 
