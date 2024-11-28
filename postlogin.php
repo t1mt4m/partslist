@@ -21,10 +21,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $backURL = $_SESSION['backURL'];
         }
         unset($_SESSION['backURL']);
-        header('Location: users.php');
+        header('Location: index.php');
         echo "yes";
     } else {
-        //header('Location: login.php');
+        header('Location: login.php');
         echo "no";
     }
 }

@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 <?php
 session_start(); 
 include_once("connection.php");
@@ -19,4 +20,14 @@ catch(PDOException $e){
     }
 echo("submitted");
 ?>
+<html>
+    <head>
+        <title>Car Added</title>
+    </head>
+    <body>
+        <h1>Car Added Successfully</h1>
+        <p>Return to <a href="index.php">Car List</a>.</p>
+    </body>
+</html>
+
         

@@ -1,7 +1,16 @@
 <!DOCTYPE html>
+<?php
+session_start(); //start session
+if (!isset($_SESSION['username'])) 
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URL'];
+    header("location:login.php");
+}
+echo ($_SESSION['username']." ".$_SESSION['userID'])
+?>
 <html lang="en">
 <head>
-  <title>Oundle Choral Society</title>
+  <title>Partslist</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -161,11 +170,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
-        <li><a href="setPage.html">Sets</a></li>
-        <li><a href="#Classes">Classes</a></li>
-        <li><a href="#Members">Assignments</a></li>
-        <li><a href="settings.html"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
-        <li><a href="#loggedOut.html"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>
+        <li><a href="useroptions.php">user options</a></li>
+        <li><a href="projects.php">add project</a></li>
+        <li><a href="cars.php">add car</a></li>
+        <li><a href="install.php">install database</a></li>
+        <li><a href="logout.php">log out</a></li>
         <li class="dropdown"> 
           </ul>
         </li>
