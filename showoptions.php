@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Options</title>
+    <title>show options</title>
 </head>
 <body>
 <?php
+session_start(); //start session
+if (!isset($_SESSION['username'])) 
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URL'];
+    header("Location:login.php");
+}
+echo ($_SESSION['username']." ".$_SESSION['userID'])
+
 include_once('connection.php');
 $stmt = $conn->prepare("SELECT * FROM users WHERE userID =:selecteduser");
-$stmt->bindParam(':selecteduser', $_POST["Username"]);
+$stmt->bindParam(':selecteduser', $_SESSION['userID']);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
@@ -23,5 +31,6 @@ echo($row["projectID"]."<br>");
 }
 ?>	
 </form>
+<
 </body>
 </html>
