@@ -8,10 +8,10 @@ echo($_SESSION['username']." ".$_SESSION['userID']);
 try{
     $stmt = $conn->prepare("
     INSERT INTO projects (projectID, projectName, carID, userID)
-    VALUES (NULL, :projectName, :userID, :carID)");
+    VALUES (NULL, :projectName, :carID, :userID)");
     $stmt->bindParam(':projectName', $_POST['projectName']);
     $stmt->bindParam(':carID', $_POST['carID']);
-    $stmt->bindParam(':userID', $_POST['userID']);//$_SESSION['userID']);
+    $stmt->bindParam(':userID', $_SESSION['userID']);
     $stmt->execute();
     $conn=null;
 }

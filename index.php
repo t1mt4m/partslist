@@ -170,10 +170,9 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
-        <li><a href="useroptions.php">user options</a></li>
+        <li><a href="projectslist.php">projects</a></li>
         <li><a href="projects.php">add project</a></li>
         <li><a href="cars.php">add car</a></li>
-        <li><a href="install.php">install database</a></li>
         <li><a href="logout.php">log out</a></li>
         <li class="dropdown"> 
           </ul>

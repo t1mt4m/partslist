@@ -27,17 +27,7 @@ if (!isset($_SESSION['username']))
             }
         ?>
         </select><br>
-    userID: <select name="userID">
-        <?php
-            include_once('connection.php');
-            $stmt = $conn->prepare("SELECT * FROM users ORDER BY userID ASC");
-            $stmt->execute();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-            {
-                echo('<option value = '. $row["userID"].'> '.$row["username"]."</option>");
-            }
-        ?>
-        </select><br>
+    <br>
     <input type="submit" value="Add project">
     <br>
     <?php

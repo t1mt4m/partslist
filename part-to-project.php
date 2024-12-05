@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="addparttoproject.php" method="POST">;
-    project: <select projectID="project">
+    project: <select name="project">
     <?php
         include_once('connection.php');
         $stmt = $conn->prepare("SELECT * FROM projects ORDER BY projectID ASC");
@@ -19,7 +19,7 @@
     ?>
     </select>
     <!--Creates a drop down list-->
-    part:<select partID="part">
+    part:<select name="part">
     <?php
     	$stmt = $conn->prepare("SELECT * FROM parts ORDER BY partType ASC");
     	$stmt->execute();
