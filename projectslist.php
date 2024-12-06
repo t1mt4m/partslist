@@ -7,7 +7,8 @@
 
 <form action="showoptions.php"  method = "post">
 
-<?php //make if statement for when there are no projects (addproject redirect?)
+<?php 
+//make if statement for when there are no projects (addproject redirect?)
 ?>
 
   <!--Creates a drop down list-->
