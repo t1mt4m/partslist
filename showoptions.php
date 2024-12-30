@@ -13,6 +13,8 @@ if (!isset($_SESSION['username']))
 }
 //echo ($_SESSION['username']." ".$_SESSION['userID']);
 
+
+
 include_once('connection.php');
 $stmt = $conn->prepare("SELECT * FROM users WHERE userID =:selecteduser");
 $stmt->bindParam(':selecteduser', $_SESSION['userID']);
