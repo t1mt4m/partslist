@@ -29,9 +29,13 @@ $stmt->bindParam(':selecteduser', $_SESSION['userID']);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
-echo($row["projectID"].' '.$row["projectName"]."<br>");
+    $_SESSION['projectID'] = $row["projectID"];
+echo $_SESSION['projectID'].' '.$row["projectName"];
 }
 ?>	
+<br>
+<a href = "part-to-project.php">add existing part to project</a><br?
+<a href = "parts.php">add new parts to database</a>
 </form>
 </body>
 </html>
