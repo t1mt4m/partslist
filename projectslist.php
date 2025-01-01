@@ -28,6 +28,8 @@
   <input type="submit" value="View options">
 </form>
 
+<a href="projects.php">add project</a>
+
 </body>
 </html>
 
