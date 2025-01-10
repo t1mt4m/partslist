@@ -4,11 +4,9 @@ include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
 try{
     $stmt = $conn->prepare("
-    INSERT INTO projectHasParts (projectID, userID, carID)
-    VALUES (:projectID, :userID, :carID)");
-    $stmt->bindParam(':projectID', $_POST['projectID']);
-    $stmt->bindParam(':userID', $_SESSION['userID']);
-    $stmt->bindParam(':carID', $_POST['carID']);
+    INSERT INTO projectHasParts (projectID, partID)
+    VALUES (:projectID, :partID)");
+    $stmt->bindParam(':projectID', $_SESSION['projectID']);
 
     $stmt->execute();
     $conn=null;
