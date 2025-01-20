@@ -7,7 +7,7 @@ try{
     INSERT INTO projectHasParts (projectID, partID)
     VALUES (:projectID, :partID)");
     $stmt->bindParam(':projectID', $_SESSION['projectID']);
-
+    $stmt->bindParam(':partID', $_POST['partID']);
     $stmt->execute();
     $conn=null;
 }

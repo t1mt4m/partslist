@@ -30,7 +30,7 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
     $_SESSION['projectID'] = $row["projectID"];
-echo $_SESSION['projectID'].' '.$row["projectName"];
+echo $_SESSION['projectID'].' '.$row["projectName"].' '.$row['carID'] ;
 }
 ?>	
 <br>

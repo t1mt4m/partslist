@@ -6,12 +6,13 @@ array_map("htmlspecialchars", $_POST);
 
     try{
     $stmt = $conn->prepare("
-    INSERT INTO parts (partName, price, partType, brand)
-    VALUES (:partName, :price, :partType, :brand)");
+    INSERT INTO parts (partName, price, partType, brand, carID)
+    VALUES (:partName, :price, :partType, :brand, :carID)");
     $stmt->bindParam(':partName', $_POST['partName']);
     $stmt->bindParam(':price', $_POST['price']);
     $stmt->bindParam(':partType', $_POST['partType']);
     $stmt->bindParam(':brand', $_POST['brand']);
+    $stmt->bindParam(':carID', $_POST['carID']);
     $stmt->execute();
     $conn=null;
     }
@@ -27,6 +28,10 @@ echo("submitted");
     </head>
     <body>
         <h1>part added successfully</h1>
-        <p><a href="index.php">back</a>.</p>
+        <p>
+            <a href="parts.php">add another part</a><br>
+            <a href="index.php">home</a>
+
+        </p>
     </body>
 </html>

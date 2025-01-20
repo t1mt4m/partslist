@@ -15,24 +15,17 @@ $stmt->execute();
 $stmt=$conn->prepare("DROP TABLE IF EXISTS parts;
 CREATE TABLE parts (
   partID int(4) AUTO_INCREMENT PRIMARY KEY,
+  brand varchar(128) NOT NULL,
   partName varchar(128) NOT NULL,
   price float NOT NULL,
-  partType varchar(32) NOT NULL
-);");
-$stmt->execute();
-$stmt=$conn->prepare("DROP TABLE IF EXISTS parttype;
-CREATE TABLE parttype (
-  partTypeNo smallint(3) NOT NULL,
-  partType varchar(64) NOT NULL
+  partType varchar(32) NOT NULL,
+  carID int(4) NOT NULL
 );");
 $stmt->execute();
 $stmt=$conn->prepare("DROP TABLE IF EXISTS projecthasparts;
 CREATE TABLE projecthasparts (
   projectID int(8) NOT NULL,
   partID int(4) NOT NULL,
-  fitted tinyint(1) NOT NULL,
-  inShop tinyint(1) NOT NULL,
-  works tinyint(1) NOT NULL,
   notes varchar(256) NOT NULL,
   PRIMARY KEY (projectID, partID)
 );");
@@ -55,15 +48,7 @@ $stmt->execute();
 
 // insert data into database tables, table references first then actual per user data after
 
-$stmt=$conn->prepare("
-INSERT INTO parttype (partTypeNo, partType) VALUES
-(1, 'Engine'),
-(2, 'Transmission'),
-(3, 'Brakes'),
-(4, 'Suspension'),
-(5, 'Electrical'),
-(6, 'Interior');");
-$stmt->execute();
+
 
 $hashed_password = password_hash("password", PASSWORD_DEFAULT);
 $stmt=$conn->prepare("

@@ -14,7 +14,7 @@
     	$stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 	    {
-            echo('<option value = '. $row["partID"].'> '.$row["partName"]." ".$row["partType"]." ".$row["price"]."</option>");
+            echo('<option value = '. $row["partID"].'> '.$row["brand"]." ".$row["partName"]." ".$row["partType"]."</option>");
 	    }
     ?>	
     </select>
