@@ -30,9 +30,9 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
         <li><a href="projectslist.php">projects</a></li>
-        <li><a href="projects.php">add project</a></li>
-        <li><a href="parts.php">add parts</a></li>
-        <li><a href="cars.php">add car</a></li>
+        <li><a href="add-project.php">add project</a></li>
+        <li><a href="add-part.php">add parts</a></li>
+        <li><a href="add-car.php">add car</a></li>
         <li><a href="logout.php">log out</a></li>
         <li class="dropdown"> 
           </ul>

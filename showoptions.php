@@ -34,8 +34,8 @@ echo $_SESSION['projectID'].' '.$row["projectName"].' '.$row['carID'] ;
 }
 ?>	
 <br>
-<a href = "part-to-project.php">add existing part to project</a><br>
-<a href = "parts.php">add new parts to database</a>
+<a href = "add-parttoproject.php">add existing part to project</a><br>
+<a href = "add-part.php">add new parts to database</a>
 </form>
 </body>
 </html>

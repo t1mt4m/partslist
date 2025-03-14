@@ -14,7 +14,7 @@ if (!isset($_SESSION['username']))
     
 </head>
 <body>
-    <form action="addproject.php" method="POST">
+    <form action="post-project.php" method="POST">
     projectName: <input type="text" name="projectName"><br>
     carID: <select name="carID">
         <?php

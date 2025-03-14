@@ -22,7 +22,7 @@ echo("submitted");
 ?>
 <html>
     <head>
-        <title>car added</title>
+        <title>adding car</title>
     </head>
     <body>
         <h1>car added successfully</h1>

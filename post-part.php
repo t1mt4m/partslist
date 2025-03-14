@@ -29,7 +29,7 @@ echo("submitted");
     <body>
         <h1>part added successfully</h1>
         <p>
-            <a href="parts.php">add another part</a><br>
+            <a href="add-part.php">add another part</a><br>
             <a href="index.php">home</a>
 
         </p>

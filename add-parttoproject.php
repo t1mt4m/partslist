@@ -6,7 +6,7 @@
     
 </head>
 <body>
-    <form action="addparttoproject.php" method="POST">
+    <form action="post-parttoproject.php" method="POST">
     <!--Creates a drop down list-->
     part:<select name="part">
     <?php
