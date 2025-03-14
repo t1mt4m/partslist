@@ -11,7 +11,7 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
 <html>
 <head>
     
-    <title>ADD YOUR USER</title>
+    <title>sign up</title>
     
 </head>
 <body>

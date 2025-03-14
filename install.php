@@ -29,6 +29,7 @@ CREATE TABLE projecthasparts (
   notes varchar(256) NOT NULL,
   PRIMARY KEY (projectID, partID)
 );");
+$stmt->execute();
 $stmt=$conn->prepare("DROP TABLE IF EXISTS projects;
 CREATE TABLE projects (
   projectID int(4) AUTO_INCREMENT PRIMARY KEY,
@@ -42,7 +43,7 @@ CREATE TABLE users (
   userID int(8) AUTO_INCREMENT PRIMARY KEY,
   username varchar(32) NOT NULL,
   password varchar(256) NOT NULL,
-  role tinyint(4) NOT NULL
+  role tinyint(1) NOT NULL
 );");
 $stmt->execute();
 
@@ -52,9 +53,9 @@ $stmt->execute();
 
 $hashed_password = password_hash("password", PASSWORD_DEFAULT);
 $stmt=$conn->prepare("
-INSERT INTO users (`username`, `password`, `role`) VALUES 
-('humblenoob76', :pw, '0'), 
-('urmom', :pw, '0');");
+INSERT INTO users (username, password, role) VALUES 
+('humblenoob76', :pw, 1), 
+('urmom', :pw, 0);");
 $stmt->bindParam(':pw', $hashed_password);
 $stmt->execute();
 

@@ -26,6 +26,10 @@ echo("submitted");
     </head>
     <body>
         <h1>added successfully</h1>
-        <p><a href="index.php">back</a>.</p>
+        <p>
+            <a href="index.php">back</a> <br>
+            <a href="showoptions.php">view projects</a>
+        </p>
+
     </body>
 </html>

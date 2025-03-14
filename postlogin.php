@@ -15,6 +15,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     if (password_verify($attempt, $hashed)) {
          $_SESSION['username'] = $row["username"];
          $_SESSION['userID'] = $row["userID"]; 
+         $_SESSION['role'] = $row["role"];
         if (!isset($_SESSION['backURL'])) {
             $backURL = "login.php"; // Sets a default destination if no BackURL set (login.php)
         } else {
