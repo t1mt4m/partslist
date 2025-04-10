@@ -8,8 +8,9 @@
 <body>
     <form action="post-parttoproject.php" method="POST">
     <!--Creates a drop down list-->
-    part:<select name="part">
+    partID:<select name="partID"><br>
     <?php
+        include_once('connection.php');
     	$stmt = $conn->prepare("SELECT * FROM parts ORDER BY partType ASC");
     	$stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -17,9 +18,8 @@
             echo('<option value = '. $row["partID"].'> '.$row["brand"]." ".$row["partName"]." ".$row["partType"]."</option>");
 	    }
     ?>	
-    </select>
-    <label for="notes">Notes:</label><br>
-    <input type="text" id="notes" name="notes"><br><br>
+    </select><br>
+    notes: <input type="text" name="notes"><br>
     <input type="submit" value="Add part to project">
     </form>
 </body>

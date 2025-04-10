@@ -26,7 +26,7 @@ echo("submitted");
     </head>
     <body>
         <h1>car added successfully</h1>
-        <p><a href="index.php">back</a>.</p>
+        <p><a href="index.php">home</a>.</p>
     </body>
 </html>
 

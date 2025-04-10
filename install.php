@@ -49,21 +49,23 @@ $stmt->execute();
 
 // insert data into database tables, table references first then actual per user data after
 
-
-
 $hashed_password = password_hash("password", PASSWORD_DEFAULT);
 $stmt=$conn->prepare("
 INSERT INTO users (username, password, role) VALUES 
-('humblenoob76', :pw, 1), 
-('urmom', :pw, 0);");
+('Strc1234', :pw, 0), 
+('realgilly', :pw, 0),
+('racerboy69', :pw, 0)
+('HesDoingItSideways', :pw, 1);");
 $stmt->bindParam(':pw', $hashed_password);
 $stmt->execute();
 
 $stmt=$conn->prepare("
 INSERT INTO cars (carMake, carModel, carYear, carPrice) VALUES
+('Mazda', 'MX-5 Miata', 1995, 2000),
 ('Toyota', 'Corolla', 2021, 35000),
-('Honda', 'Civic', 2005, 10000),
-('Mazda', 'Miata', 1999, 3500);");
+('Tesla', 'Model S', 2015, 20000)
+('Ford', 'Fiesta', 2013, 3000)
+('Volvo', 'XC90', 2008, 6000;");
 $stmt->execute();
 
 $conn=null; //close connection

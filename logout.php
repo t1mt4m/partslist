@@ -4,5 +4,6 @@ if(isset($_SESSION['name']))
 {
     unset($_SESSION['name']);
 }
-header("Location: login.php");
 ?>
+<!DOCTYPE html>
+<a href="login.php">login</a>

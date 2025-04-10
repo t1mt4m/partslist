@@ -5,14 +5,14 @@
 </head>
 <body>
 
-<form action="showoptions.php"  method = "post">
+<form action="showoptions.php"  method = "POST">
 
 <?php 
 //make if statement for when there are no projects (addproject redirect?)
 ?>
 
   <!--Creates a drop down list-->
-	project: <select name="project">
+	projectID: <select name="projectID">
     <?php
         include_once('connection.php');
         $stmt = $conn->prepare("SELECT * FROM projects ORDER BY projectID ASC");

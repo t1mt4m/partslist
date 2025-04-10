@@ -15,11 +15,11 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
 <html>
 <head>
     
-    <title>ADD PROJECT</title>
+    <title>DELETE CAR</title>
     
 </head>
 <body>
-    <form action="deletingcar.php" method="POST">
+    <form action="post-deletecar.php" method="POST">
     carID: <select name="carID">
         <?php
             include_once('connection.php');
@@ -30,9 +30,10 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
                 echo('<option value = '. $row["carID"].'> '.$row["carMake"]." ".$row["carModel"]." ".$row["carYear"]."</option>");
             }
         ?>
-        </select><br>
+    </select><br>
     <br>
-    <input type="submit" value="Add project">
+    <h1>THIS ACTION CANNOT BE UNDONE</h1><br>
+    <input type="submit" value="delete car">
     <br>
     <?php
         echo($_SESSION['username'].': '.$_SESSION['userID']);
