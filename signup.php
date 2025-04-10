@@ -15,7 +15,7 @@ echo ($_SESSION['username']." ".$_SESSION['userID'])
     
 </head>
 <body>
-    <form action="post-signup.php" method="POST">
+    <form action="post-signup.php" method="POST"> <!-- create the form to input signup details --!>
     username: <input type="text" name="username"><br>
     password: <input type="password" name="password"><br>
     confirmpassword: <input type="password" name="confirmpassword"><br>
