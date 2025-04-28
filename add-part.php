@@ -15,7 +15,7 @@ current parts:
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
         echo('<option value = '. $row["partID"].'> '.$row["partName"]." ".$row["partType"]." ".$row["brand"]." ".$row["carID"]." ".$row["price"]."</option>");
-        }
+        }// echoes a list of existing parts
     ?> 
     <br>
     <br>
